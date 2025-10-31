@@ -1,0 +1,70 @@
+/* --- Ajustes generales del navbar --- */
+.navbar {
+    background-color: #000 !important;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 3px 10px rgba(255, 215, 0, 0.15);
+}
+
+.logo {
+    max-height: 60px;
+}
+
+/* --- Enlaces del navbar --- */
+.custom-link {
+    color: white !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+    padding-bottom: 5px;
+}
+
+/* Línea dorada animada al hacer hover */
+.custom-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: gold;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Hover */
+.custom-link:hover {
+    color: gold !important;
+}
+
+.custom-link:hover::after {
+    width: 100%;
+}
+
+/* Enlace activo */
+.active {
+    color: gold !important;
+}
+
+/* --- Campo de búsqueda --- */
+.form-control {
+    background-color: transparent;
+    border: 1px solid gold;
+    color: white;
+}
+
+.form-control::placeholder {
+    color: #ccc;
+}
+
+.btn-outline-warning {
+    border-color: gold;
+    color: gold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-warning:hover {
+    background-color: gold;
+    color: black;
+}
+

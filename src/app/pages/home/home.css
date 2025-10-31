@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
+
+.titleText {
+    font-family: 'Genos', sans-serif;
+    color: gold;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+    font-size: 40px;
+
+}
+
+.carousel-item img {
+    height: 660px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.titleCard {
+    font-family: 'Genos', sans-serif;
+    text-align: center;
+    color: rgb(95, 4, 4);
+    font-size: 40px;
+
+}
+
+.cardStyle {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: white !important;
+    border-radius: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none;
+    /* Elimina el ícono por defecto */
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid rgb(90, 17, 31);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(90, 17, 31);
+    font-size: 1.5rem;
+}
+
+.carousel-control-prev-icon::before {
+    content: '‹';
+    /* flecha izquierda */
+}
+
+.carousel-control-next-icon::before {
+    content: '›';
+    /* flecha derecha */
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: rgb(90, 17, 31);
+}

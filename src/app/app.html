@@ -1,46 +1,9 @@
 
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="assets/mk-logo.png" alt="Logo" class="img-fluid" style="max-height: 60px;" />
-        </a>
-      </div>
-    </nav>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto d-flex gap-3">
-        <li class="nav-item">
-          <a routerLink="/" routerLinkActive="active" style="color: white; text-decoration: none;" [routerLinkActiveOptions]="{ exact: true }">
-            Inicio
-          </a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/games" routerLinkActive="active" style="color: white; text-decoration: none;">
-            Juegos
-          </a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/movies" routerLinkActive="active" style="color: white; text-decoration: none;">
-            Peliculas
-          </a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/history" routerLinkActive="active" style="color: white; text-decoration: none;">
-            Historia
-          </a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/characters" routerLinkActive="active" style="color: white; text-decoration: none;">
-            Personajes
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<router-outlet></router-outlet>
+<app-header></app-header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<app-footer></app-footer>
