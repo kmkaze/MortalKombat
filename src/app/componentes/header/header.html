@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-5">
                 <li class="nav-item">
                     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
@@ -16,22 +16,26 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a routerLink="/games" routerLinkActive="active" class="nav-link custom-link">
-                        Juegos
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a routerLink="/movies" routerLinkActive="active" class="nav-link custom-link">
-                        Películas
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a routerLink="/history" routerLinkActive="active" class="nav-link custom-link">
+                    <a class="nav-link text-dark" routerLink="/history" routerLinkActive="active"
+                        class="nav-link custom-link">
                         Historia
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a routerLink="/characters" routerLinkActive="active" class="nav-link custom-link">
+                    <a class="nav-link text-dark" routerLink="/games" routerLinkActive="active"
+                        class="nav-link custom-link">
+                        Juegos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" routerLink="/movies" routerLinkActive="active"
+                        class="nav-link custom-link">
+                        Películas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" routerLink="/characters" routerLinkActive="active"
+                        class="nav-link custom-link">
                         Personajes
                     </a>
                 </li>
