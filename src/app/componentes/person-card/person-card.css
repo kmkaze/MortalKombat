@@ -1,5 +1,5 @@
 .card.product-card {
-    background-color: #ffffff;
+    background-color: #000000;
     /* Fondo oscuro para la parte inferior */
     border: none;
     border-radius: 16px;
@@ -15,8 +15,7 @@
 
 /* Sección de la imagen */
 .products-image-wrapper {
-    background-color: #c1c1c1;
-    /* Fondo blanco solo detrás de la imagen */
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,4 +28,12 @@
     max-height: 100%;
     object-fit: contain;
 }
-
+.card-title {
+    font-family: 'Genos', sans-serif;
+    color: gold;
+    text-align: center;
+}
+.Description{
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
