@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
+
+.titleText {
+    font-family: 'Genos', sans-serif;
+    color: gold;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.cardStyle {
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    background-color: white !important;
+    border-radius: 10px;
+}
+
+.history-container {
+    min-height: 100vh;
+    background-color: #2a2a2a;
+}
+
+.content-wrapper {
+    min-height: calc(100vh - 200px);
+}
+
+.section-title {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+}
+
+/* Estilos mejorados para las imágenes */
+.game-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.game-img {
+    height: 250px;
+    object-fit: cover;
+    /* Mejora la calidad de renderizado de las imágenes */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.game-title {
+    background-color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .titleText {
+        font-size: 22px;
+    }
+    
+    .section-title {
+        font-size: 14px;
+    }
+    
+    .game-img {
+        height: 200px;
+    }
+}

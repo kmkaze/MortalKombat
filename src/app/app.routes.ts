@@ -4,7 +4,7 @@ import { Games } from './pages/games/games';
 import { Movies } from './pages/movies/movies';
 import { History } from './pages/history/history';
 import { Characters } from './pages/characters/characters';
-import { Form } from './pages/form/form';
+import { ContactComponent } from './pages/contact/contact';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -12,6 +12,6 @@ export const routes: Routes = [
   { path: 'movies', component: Movies },
   { path: 'history', component: History },
   { path: 'characters', component: Characters },
-  { path: 'form', component: Form },
+  { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '' } // redirección por defecto
 ];
