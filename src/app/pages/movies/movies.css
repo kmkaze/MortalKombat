@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
+
+.titleText {
+    font-family: 'Genos', sans-serif;
+    color: gold;
+    font-size: 50px;
+}
+
+.cardStyle {
+    background-image: url('/assets/Background2.jpg');
+    border-top: 2px solid crimson;
+    box-shadow: 0 -2px 10px rgba(255, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.9);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    color: white;
+    padding:7%;
+}

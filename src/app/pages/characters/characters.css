@@ -1,0 +1,74 @@
+/* Fondo general de la página de productos */
+.products-page {
+    background: linear-gradient(180deg, #000 0%, #111 100%);
+    /* Negro con sutil degradado */
+    color: #fff;
+    min-height: 100vh;
+    padding: 3rem 1rem;
+}
+
+/* Títulos y subtítulos */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    color: #ccc;
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Filtros */
+.text-center .btn {
+    border-color: #fff;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.text-center .btn:hover,
+.text-center .btn.active {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Tarjetas del producto (afecta el componente hijo también) */
+app-product-card {
+    display: block;
+}
+
+.card {
+    background-color: #181818 !important;
+    border: 1px solid #222;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+.card-title {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #bbb;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+}

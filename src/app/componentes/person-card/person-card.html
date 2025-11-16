@@ -1,0 +1,14 @@
+<div class="card product-card h-100">
+    <div class="products-image-wrapper">
+        <img [src]="person.image" [alt]="person.name" class="card-img-top product-image"
+            (error)="$event.target.src='assets/images/placeholder.jpg'" />
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title">{{ person.name }}</h5>
+        <p class="price">{{ person.History }}</p>
+        <button class="btn btn-dark w-100">
+            Ver mas
+        </button>
+    </div>
+</div>
