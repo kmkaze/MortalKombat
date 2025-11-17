@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
+.ConCard{
+    padding: 50px;
+    background-color: black;
+}
 
 .titleText {
     font-family: 'Genos', sans-serif;
@@ -29,7 +33,7 @@
 
 .custom-card .card-img-top {
 
-    height: 420px;
+    height: 400px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
 }
