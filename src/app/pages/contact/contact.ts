@@ -1,70 +1,95 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact.html',
   styleUrls: ['./contact.css']
 })
 export class ContactComponent {
+
   nombre: string = '';
   apellido: string = '';
   correo: string = '';
 
-  // Evitar que se escriban números (teclado)
+  mensaje: string = "";
+  tipoMensaje: 'error' | 'success' | '' = '';
+
+  submitted = false;
+
   bloquearNumeros(event: KeyboardEvent) {
     const key = event.key;
 
-    // permitir teclas de control (backspace, tab, arrows, enter, delete)
     const controlKeys = [
-      'Backspace','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Delete','Enter','Home','End'
+      'Backspace','Tab','ArrowLeft','ArrowRight','ArrowUp','ArrowDown',
+      'Delete','Enter','Home','End'
     ];
     if (controlKeys.includes(key)) return;
 
-    // permitir letras y espacios y letras acentuadas (siempre que no sea dígito)
-    if (/[0-9]/.test(key)) {
+    if (/^[0-9]$/.test(key) || event.code.includes("Digit") || event.code.includes("Numpad")) {
       event.preventDefault();
     }
   }
 
-  // Evitar pegar texto que contenga números
   onPasteNoNumbers(event: ClipboardEvent) {
-    const paste = (event.clipboardData || (window as any).clipboardData)?.getData('text') || '';
-    if (/\d/.test(paste)) {
-      event.preventDefault();
-    }
+    const texto = event.clipboardData?.getData('text') || '';
+    if (/\d/.test(texto)) event.preventDefault();
   }
 
-  // Normalizar entrada: quitar cualquier carácter no permitido (se usa en input)
   onInputNombreApellido(event: Event, campo: 'nombre' | 'apellido') {
-    const el = event.target as HTMLInputElement;
-    const limpio = el.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúñÑ\s]/g, '');
-    if (el.value !== limpio) {
-      el.value = limpio;
-      if (campo === 'nombre') this.nombre = limpio;
-      else this.apellido = limpio;
-    }
+    const input = event.target as HTMLInputElement;
+    const limpio = input.value.replace(/[^A-Za-zÁÉÍÓÚáéíóúñÑ\s]/g, '');
+    input.value = limpio;
+
+    if (campo === 'nombre') this.nombre = limpio;
+    else this.apellido = limpio;
   }
 
   correoValido(correo: string): boolean {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(correo);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
   }
 
-  enviarFormulario() {
-    if (!this.nombre.trim() || !this.apellido.trim() || !this.correo.trim()) {
-      alert('Todos los campos son obligatorios.');
+  mostrarMensaje(texto: string, tipo: 'error' | 'success') {
+    this.mensaje = texto;
+    this.tipoMensaje = tipo;
+
+    setTimeout(() => {
+      this.mensaje = "";
+      this.tipoMensaje = "";
+    }, 3000);
+  }
+
+  enviarFormulario(form: NgForm) {
+    this.submitted = true;
+
+    let errores: string[] = [];
+
+    if (!this.nombre.trim()) errores.push("Nombre");
+    if (!this.apellido.trim()) errores.push("Apellido");
+    if (!this.correo.trim()) errores.push("Correo");
+
+    if (errores.length > 0) {
+      this.mostrarMensaje(
+        "Campos obligatorios sin completar: " + errores.join(", "),
+        "error"
+      );
       return;
     }
 
     if (!this.correoValido(this.correo)) {
-      alert('Ingrese un correo válido.');
+      this.mostrarMensaje("El correo no tiene un formato válido.", "error");
       return;
     }
 
-    // aquí puedes enviar a Firebase o lo que necesites
-    alert(`Formulario enviado:\nNombre: ${this.nombre}\nApellido: ${this.apellido}\nCorreo: ${this.correo}`);
+    this.mostrarMensaje("Información enviada correctamente ✔", "success");
+
+    this.nombre = "";
+    this.apellido = "";
+    this.correo = "";
+    this.submitted = false;
+    form.resetForm();
   }
 }

@@ -1,3 +1,108 @@
+body {
+  background-color: #1e1e1e; /* Fondo negro */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
 .card {
-  border-radius: 12px;
+  background: #2a2a2a; /* Gris medio (ni claro, ni oscuro) */
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #b30000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
+}
+
+/* GRUPOS */
+.group {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+label {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 10px;
+  background: #1f1f1f; /* Gris oscuro para contraste */
+  border: 1px solid #444;
+  color: white;
+  border-radius: 8px;
+  margin-top: 5px;
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #b30000;
+  box-shadow: 0 0 8px rgba(179, 0, 0, 0.7);
+}
+
+/* INPUT INVALIDO */
+input.invalid {
+  border: 2px solid red !important;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+/* BOTÓN */
+.btn {
+  width: 100%;
+  background: linear-gradient(90deg, #b30000, #ff4500);
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
+}
+
+/* TARJETAS DE ALERTA */
+.alert-box {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  animation: aparecer 0.3s ease-in-out;
+}
+
+/* ERROR */
+.alert-error {
+  background-color: rgba(255, 0, 0, 0.15);
+  border-left: 6px solid #ff3333;
+  color: #000000;
+}
+
+/* EXITO */
+.alert-success {
+  background-color: rgba(0, 255, 0, 0.15);
+  border-left: 6px solid #00cc00;
+  color: #000000;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
