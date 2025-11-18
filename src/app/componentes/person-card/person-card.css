@@ -3,14 +3,14 @@
     /* Fondo oscuro para la parte inferior */
     border: none;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 12px rgba(132, 0, 255, 0.05);
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card.product-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+    box-shadow:  4px 4px 30px 2px  rgba(255, 4, 4, 0.15);
 }
 
 /* Sección de la imagen */
