@@ -1,31 +1,48 @@
-<div class="container">
-	<h2>Formulario de Contacto</h2>
+<div class="back">
+	<div class="container">
+		<h2>Formulario de Contacto</h2>
+		<div class="text-center mb-5">
+			<p class="lead" style="color: var(--text-dark); opacity: 0.7;">¿Tienes preguntas o sugerencias? Contáctanos
+			</p>
+		</div>
+		<!-- MENSAJE DE ALERTA -->
+		<div *ngIf="mensaje" class="alert-box"
+			[ngClass]="{ 'alert-error': tipoMensaje === 'error', 'alert-success': tipoMensaje === 'success' }">
+			{{ mensaje }}
+		</div>
 
-	<!-- MENSAJE DE ALERTA -->
-	<div *ngIf="mensaje" class="alert-box" [ngClass]="{ 'alert-error': tipoMensaje === 'error', 'alert-success': tipoMensaje === 'success' }">
-		{{ mensaje }}
-	</div>
+		<div class="card">
+			<form #form="ngForm" (ngSubmit)="enviarFormulario(form)">
 
-	<div class="card">
-		<form #form="ngForm" (ngSubmit)="enviarFormulario(form)">
+				<div class="group">
+					<label>Nombre</label>
+					<input name="nombre" [(ngModel)]="nombre" required (keydown)="bloquearNumeros($event)"
+						(paste)="onPasteNoNumbers($event)" (input)="onInputNombreApellido($event, 'nombre')"
+						[class.invalid]="submitted && !nombre.trim()">
+				</div>
 
-			<div class="group">
-				<label>Nombre</label>
-				<input name="nombre" [(ngModel)]="nombre" required (keydown)="bloquearNumeros($event)" (paste)="onPasteNoNumbers($event)" (input)="onInputNombreApellido($event, 'nombre')" [class.invalid]="submitted && !nombre.trim()">
-			</div>
+				<div class="group">
+					<label>Apellido</label>
+					<input name="apellido" [(ngModel)]="apellido" required (keydown)="bloquearNumeros($event)"
+						(paste)="onPasteNoNumbers($event)" (input)="onInputNombreApellido($event, 'apellido')"
+						[class.invalid]="submitted && !apellido.trim()">
+				</div>
 
-			<div class="group">
-				<label>Apellido</label>
-				<input name="apellido" [(ngModel)]="apellido" required (keydown)="bloquearNumeros($event)" (paste)="onPasteNoNumbers($event)" (input)="onInputNombreApellido($event, 'apellido')" [class.invalid]="submitted && !apellido.trim()">
-			</div>
+				<div class="group">
+					<label>Correo</label>
+					<input name="correo" [(ngModel)]="correo" required (input)="correo = correo.trim()"
+						[class.invalid]="submitted && (!correo.trim() || !correoValido(correo))">
+				</div>
+				<div class="group">
+					<label for="mensaje" style="color: white;">Mensaje</label>
+					<textarea id="mensaje" name="mensajeTexto" [(ngModel)]="mensajeTexto" required
+						[class.invalid]="submitted && !mensajeTexto.trim()" rows="5"
+						style="width: 100%; background-color: black; color: white; border: 1px solid #ccc; resize: vertical;"
+						placeholder="Escribe tu mensaje aquí..."></textarea>
+				</div>
+				<button class="btn" type="submit">Enviar</button>
 
-			<div class="group">
-				<label>Correo</label>
-				<input name="correo" [(ngModel)]="correo" required (input)="correo = correo.trim()" [class.invalid]="submitted && (!correo.trim() || !correoValido(correo))">
-			</div>
-
-			<button class="btn" type="submit">Enviar</button>
-
-		</form>
+			</form>
+		</div>
 	</div>
 </div>

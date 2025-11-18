@@ -1,5 +1,6 @@
 body {
-  background-color: #1e1e1e; /* Fondo negro */
+  background-color: #1e1e1e;
+  /* Fondo negro */
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -18,7 +19,8 @@ h2 {
 }
 
 .card {
-  background: #2a2a2a; /* Gris medio (ni claro, ni oscuro) */
+  background: #2a2a2a;
+  /* Gris medio (ni claro, ni oscuro) */
   padding: 25px;
   border-radius: 15px;
   border: 2px solid #b30000;
@@ -40,7 +42,8 @@ label {
 input {
   width: 100%;
   padding: 10px;
-  background: #1f1f1f; /* Gris oscuro para contraste */
+  background: #1f1f1f;
+  /* Gris oscuro para contraste */
   border: 1px solid #444;
   color: white;
   border-radius: 8px;
@@ -92,7 +95,7 @@ input.invalid {
 .alert-error {
   background-color: rgba(255, 0, 0, 0.15);
   border-left: 6px solid #ff3333;
-  color: #000000;
+  color: #ffffff;
 }
 
 /* EXITO */
@@ -103,6 +106,27 @@ input.invalid {
 }
 
 @keyframes aparecer {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.back {
+  background-image: url(/assets/Back.png);
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  border-top: 2px solid crimson;
+  box-shadow: 0 -2px 10px rgba(255, 0, 0, 0.3);
+  color: white;
+  padding: 3%;
 }

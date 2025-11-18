@@ -14,7 +14,7 @@ export class ContactComponent {
   nombre: string = '';
   apellido: string = '';
   correo: string = '';
-
+  mensajeTexto: string = '';
   mensaje: string = "";
   tipoMensaje: 'error' | 'success' | '' = '';
 
@@ -70,6 +70,7 @@ export class ContactComponent {
     if (!this.nombre.trim()) errores.push("Nombre");
     if (!this.apellido.trim()) errores.push("Apellido");
     if (!this.correo.trim()) errores.push("Correo");
+    if (!this.mensajeTexto.trim()) errores.push("Mensaje");
 
     if (errores.length > 0) {
       this.mostrarMensaje(
@@ -89,6 +90,7 @@ export class ContactComponent {
     this.nombre = "";
     this.apellido = "";
     this.correo = "";
+    this.mensajeTexto = '';
     this.submitted = false;
     form.resetForm();
   }
